@@ -1,0 +1,14 @@
+<section class="card">
+  <img class="item-img responsive-img" src="{{product.imgUrl}}" alt="">
+  <article class="item-info">
+    <h4>{{product.title}}</h4>
+    <h5>Price: ${{product.price}}.00</h5>
+    <p>Description: {{product.description}}</p>
+  </article>
+  <div class="item-actions">
+    <h4>Qty:</h4>
+    <input type="number" name="selectedQty" [(ngModel)]="product.selectedQty">
+    <button class="card-action item-actions" type="button" (click)="onAddToBag()">Add to Bag</button>
+  </div>
+  <h5 class="out" *ngIf="!product.inStock">Out of Stock</h5>
+</section>

@@ -1,0 +1,83 @@
+.card {
+  width: 100%;
+  height: 28vh;
+  min-height: 28vh;
+  background: #fff;
+  border: 1px solid #f3f4f4;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.card-header {
+  margin: 8px;
+}
+
+.card-action {
+  height: 40px;
+  width: 120px;
+  margin: 6px 6px 6px 0px;
+  color: black;
+  background: #61dafb;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+}
+
+.card-action:hover {
+  background: #f3f4f4;
+  transition: 0.3s ease background;
+}
+
+.responsive-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.item-img {
+  margin: 8px;
+  grid-row-start: 1;
+  grid-row-end: span 12;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.item-info {
+  grid-row-start: 1;
+  grid-row-end: 12;
+  grid-column-start: 4;
+  grid-column-end: span 4;
+}
+
+.item-actions {
+  grid-row-start: 1;
+  grid-row-end: span 12;
+  grid-column-start: 8;
+  grid-column-end: 12;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+input, textarea {
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 8px;
+  border: 1px solid #f3f4f4;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px #61dafb;
+  padding: 3px 0px 3px 3px;
+  margin: 8px;
+  border: 1px solid #61dafb;
+}
+
+.out {
+  grid-column-start: 9;
+  grid-column-end: span 4;
+  grid-row-start: 4;
+  grid-row-end: span 1;
+}
