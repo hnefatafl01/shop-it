@@ -52,30 +52,21 @@ export function productsReducers(state = initialState, action: ProductsActions.P
       let bag = [...state.bagList];
       let product = stock[stock.indexOf(action.payload)];
       if (product.quantity > 0) {
-        let bagItem = { ...product };
+        let bagItem = { ...action.payload };
         bagItem.quantity = 0;
         product.quantity -= action.payload.selectedQty;
-        if (product.quantity < 1) {
-          product.inStock = false;
-        }
-        bagItem.quantity += action.payload.selectedQty;
-        if (bag.length < 1) {
-          // bagItem.quantity = action.payload.selectedQty;
-          bag = [...bag, bagItem];
+        if (bag.length === 0) {
+          bagItem.quantity = action.payload.selectedQty;
+          bag.push(bagItem);
         } else {
-          for (let i = 0; i < bag.length; ++i) {
-            if (bagItem.title === bag[i].title) {
-              bag[i].quantity += bagItem.quantity;
+          for (let i = 0; i < bag.length; i++) {
+            if (bagItem.title !== bag[i].title) {
+              bag.push(bagItem);
             } else {
-              bag = [...bag, bagItem];
+              bag[i].quantity += bagItem.selectedQty;
             }
           }
         }
-        console.log(bag);
-        // bag.push(bagItem);
-      } else {
-        // stock[stock.indexOf(action.payload)].inStock = false;
-        console.log('out of stock', stock[stock.indexOf(action.payload)].inStock);
       }
       return {
         ...state,
