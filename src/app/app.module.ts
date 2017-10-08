@@ -15,6 +15,7 @@ import { reducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
 import { SortPricePipe } from './shared/sort-price.pipe';
 import { SearchPipe } from './shared/search.pipe';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchPipe } from './shared/search.pipe';
     ProductListComponent,
     ItemComponent,
     SearchPipe,
-    SortPricePipe
+    SortPricePipe,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

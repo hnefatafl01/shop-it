@@ -1,12 +1,12 @@
 .card {
   width: 100%;
   height: 28vh;
-  min-height: 28vh;
+  min-height: 216px;;
   background: #fff;
   border: 1px solid #f3f4f4;
   display: grid;
-  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
 .card-header {
@@ -44,10 +44,15 @@
 }
 
 .item-info {
+  grid-auto-columns: minmax(125px, auto);
   grid-row-start: 1;
   grid-row-end: 12;
   grid-column-start: 4;
   grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .item-actions {
