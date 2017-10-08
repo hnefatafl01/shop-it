@@ -18,6 +18,7 @@ const initialState: State = {
       'https://images.pexels.com/photos/3008/drinks-supermarket-cans-beverage.jpg?w=1260&h=750&auto=compress&cs=tinysrgb',
       1.00,
       '6oz energy drink',
+      ['beverage'],
       'Energicos',
       false,
       1,
@@ -27,6 +28,7 @@ const initialState: State = {
       'https://images.pexels.com/photos/32266/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb',
       3.00,
       'finest tea',
+      ['food', 'beverage'],
       'Mean Green',
       true,
       1,
@@ -34,9 +36,10 @@ const initialState: State = {
     ),
     new Item(
       'https://images.pexels.com/photos/84475/night-product-watch-dramatic-84475.jpeg?h=350&auto=compress&cs=tinysrgb',
-      2.00,
+      222.00,
       'keeping time before anyone else',
-      'hipster watch',
+      ['apparel'],
+      'Hipster Watch',
       true,
       1,
       5

@@ -1,7 +1,11 @@
 <div class="container product-list">
   <div class="search-bar">
-      <!-- <label for="search"></label> -->
     <div>
+      <label for="category-search">Search by Category:</label>
+      <select id="sort-category">
+          <option value="cat" selected>choose category</option>
+          <option value="cat" *ngFor="let cat of categories">{{cat}}</option>
+      </select>
       <label for="search">Search by Name:</label>
       <input id="search" name="search" type="text" [(ngModel)]="search">
     </div>

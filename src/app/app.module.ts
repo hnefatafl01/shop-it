@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { SortPricePipe } from './shared/sort-price.pipe';
 import { SearchPipe } from './shared/search.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CategoryPipe } from './shared/category.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ItemComponent,
     SearchPipe,
     SortPricePipe,
-    CheckoutComponent
+    CheckoutComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,

@@ -3,9 +3,9 @@ export class Item {
     public imgUrl: string,
     public price: number,
     public description: string,
+    public categories: string[],
     public title: string,
     public inStock: boolean,
     public selectedQty: number,
     public quantity?: number) {}
-
 }
