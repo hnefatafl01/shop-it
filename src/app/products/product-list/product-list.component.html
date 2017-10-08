@@ -1,8 +1,11 @@
 <div class="container product-list">
   <div class="search-bar">
       <!-- <label for="search"></label> -->
-    <label for="search">Search by Name:</label>
-    <input id="search" name="search" type="text" [(ngModel)]="search">
+    <div>
+      <label for="search">Search by Name:</label>
+      <input id="search" name="search" type="text" [(ngModel)]="search">
+    </div>
+    <button type="button" routerLink="#">Go to Checkout</button>
   </div>
   <div class="list-header">
     <h4 class="item-header">Item</h4>
