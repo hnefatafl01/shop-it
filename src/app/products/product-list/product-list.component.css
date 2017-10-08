@@ -4,8 +4,21 @@
 
 .list-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search {
+  height: 34px !important;
+  width: 120px !important;
+  border-radius: 4px;
+  text-decoration: none;
 }
 /*
 .item-header {

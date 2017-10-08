@@ -60,24 +60,16 @@
   justify-content: center;
 }
 
-input, textarea {
-  transition: all 0.30s ease-in-out;
-  outline: none;
-  padding: 3px 0px 3px 3px;
-  margin: 8px;
-  border: 1px solid #f3f4f4;
-}
-
-input:focus, textarea:focus {
-  box-shadow: 0 0 5px #61dafb;
-  padding: 3px 0px 3px 3px;
-  margin: 8px;
-  border: 1px solid #61dafb;
-}
-
 .out {
   grid-column-start: 9;
   grid-column-end: span 4;
   grid-row-start: 4;
   grid-row-end: span 1;
+}
+
+input {
+  height: 34px;
+  width: 34px;
+  border-radius: 4px;
+  text-decoration: none;
 }

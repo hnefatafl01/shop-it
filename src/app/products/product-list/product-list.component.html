@@ -1,4 +1,9 @@
 <div class="container product-list">
+  <div class="search-bar">
+      <!-- <label for="search"></label> -->
+    <label for="search">Search by Name:</label>
+    <input name="search" type="text" [(ngModel)]="search">
+  </div>
   <div class="list-header">
     <h4 class="item-header">Item</h4>
     <h4 class="item-description">Description</h4>
@@ -10,7 +15,7 @@
       </select>
     </div>
   </div>
-  <div *ngFor="let item of productList | sortPrice:direction">
+  <div *ngFor="let item of productList | searchPipe:search | sortPrice:direction">
     <app-item [product]="item"></app-item>
   </div>
 </div>
