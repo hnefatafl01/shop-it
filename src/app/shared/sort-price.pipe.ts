@@ -14,6 +14,8 @@ export class SortPricePipe implements PipeTransform {
       return value.sort((a, b) => {
         return b.price - a.price;
       });
+    } else {
+      return value;
     }
   }
 
