@@ -17,9 +17,9 @@
   align-items: center;
 }
 
-.search {
+#search {
   height: 34px !important;
-  width: 120px !important;
+  width: 200px !important;
   border-radius: 4px;
   text-decoration: none;
 }
