@@ -1,13 +1,12 @@
-import { CartActions } from './../cart/store/cart.actions';
 import { ActionReducerMap } from '@ngrx/store';
 
-import * as fromCart from '../cart/store/cart.reducers';
+import * as fromProducts from '../products/store/products.reducers';
 
 export interface AppState {
-  cart: fromCart.State;
+  products: fromProducts.State;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  cart: fromCart.cartReducers
+  products: fromProducts.productsReducers
 };
 

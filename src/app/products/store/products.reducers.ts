@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { Item } from '../../shared/item.model';
-import * as CartActions from './cart.actions';
+import * as ProductsActions from './products.actions';
 import * as fromApp from '../../store/app.reducers';
 
 export interface FeatureState extends fromApp.AppState {
-  cartState: State;
+  productsState: State;
 }
 
 export interface State {
@@ -19,9 +19,9 @@ const initialState: State = {
       4.00,
       '8oz energy drink',
       'Energicos',
-      true,
+      false,
       1,
-      1
+      0
     ),
     new Item(
       'https://images.pexels.com/photos/32266/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb',
@@ -30,7 +30,7 @@ const initialState: State = {
       'Mean Green',
       true,
       1,
-      10
+      1
     ),
     new Item(
       'https://images.pexels.com/photos/84475/night-product-watch-dramatic-84475.jpeg?h=350&auto=compress&cs=tinysrgb',
@@ -39,27 +39,43 @@ const initialState: State = {
       'hipster watch',
       true,
       1,
-      10
+      5
     )
   ],
   bagList: []
 };
 
-export function cartReducers(state = initialState, action: CartActions.CartActions) {
+export function productsReducers(state = initialState, action: ProductsActions.ProductsActions) {
   switch (action.type) {
-    case CartActions.ADD_TO_BAG:
+    case ProductsActions.ADD_TO_BAG:
       let stock = [...state.productList];
       let bag = [...state.bagList];
-      if(stock[stock.indexOf(action.payload)].quantity > 0) {
-        let product = stock[stock.indexOf(action.payload)];
+      let product = stock[stock.indexOf(action.payload)];
+      if (product.quantity > 0) {
+        let bagItem = { ...product };
+        bagItem.quantity = 0;
+        product.quantity -= action.payload.selectedQty;
         if (product.quantity < 1) {
           product.inStock = false;
         }
-        product.quantity--;
-        bag.push(action.payload);
-        bag[bag.indexOf(action.payload)].quantity = Math.abs(product.quantity - bag[bag.indexOf(action.payload)].quantity);
+        bagItem.quantity += action.payload.selectedQty;
+        if (bag.length < 1) {
+          // bagItem.quantity = action.payload.selectedQty;
+          bag = [...bag, bagItem];
+        } else {
+          for (let i = 0; i < bag.length; ++i) {
+            if (bagItem.title === bag[i].title) {
+              bag[i].quantity += bagItem.quantity;
+            } else {
+              bag = [...bag, bagItem];
+            }
+          }
+        }
+        console.log(bag);
+        // bag.push(bagItem);
       } else {
-        stock[stock.indexOf(action.payload)].inStock = false;
+        // stock[stock.indexOf(action.payload)].inStock = false;
+        console.log('out of stock', stock[stock.indexOf(action.payload)].inStock);
       }
       return {
         ...state,

@@ -7,22 +7,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartListComponent } from './cart/cart-list/cart-list.component';
-import { ItemComponent } from './cart/item/item.component';
-import { CartComponent } from './cart/cart.component';
+import { HeaderComponent } from './header/header.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ItemComponent } from './products/item/item.component';
 import { reducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './header/header.component';
-import { CartDetailComponent } from './cart-detail/cart-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CartComponent,
-    CartListComponent,
+    ProductsComponent,
+    ProductListComponent,
     ItemComponent,
-    CartDetailComponent
   ],
   imports: [
     BrowserModule,

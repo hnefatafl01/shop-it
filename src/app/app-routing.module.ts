@@ -4,16 +4,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { CartComponent } from './cart/cart.component';
-import { CartListComponent } from './cart/cart-list/cart-list.component';
-import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
 
 const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/cart' },
+  { path: '', pathMatch: 'full', redirectTo: '/products' },
   {
-    path: 'cart', component: CartComponent, children: [
-      { path: ':id', component: CartDetailComponent },
-      { path: '', component: CartListComponent }
+    path: 'products', component: ProductsComponent, children: [
+      // { path: ':id', component: ProductDetailComponent },
+      { path: '', component: ProductListComponent }
     ]
   }
 ];
