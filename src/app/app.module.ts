@@ -13,6 +13,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ItemComponent } from './products/item/item.component';
 import { reducers } from './store/app.reducers';
 import { environment } from '../environments/environment';
+import { SortPricePipe } from './shared/sort-price.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { environment } from '../environments/environment';
     ProductsComponent,
     ProductListComponent,
     ItemComponent,
+    SortPricePipe,
   ],
   imports: [
     BrowserModule,

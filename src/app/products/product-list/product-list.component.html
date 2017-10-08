@@ -1,5 +1,16 @@
 <div class="container product-list">
-  <div *ngFor="let item of productList">
+  <div class="list-header">
+    <h4 class="item-header">Item</h4>
+    <h4 class="item-description">Description</h4>
+    <div class="sort">
+      <label for="sort-price">Sort By Price:</label>
+      <select id="sort-price" [(ngModel)]="direction">
+        <option value="asc">High to Low</option>
+        <option value="desc">Low to High</option>
+      </select>
+    </div>
+  </div>
+  <div *ngFor="let item of productList | sortPrice:direction">
     <app-item [product]="item"></app-item>
   </div>
 </div>

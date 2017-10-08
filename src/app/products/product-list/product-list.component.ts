@@ -12,6 +12,7 @@ import { Item } from './../../shared/item.model';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  direction: string;
   productsState: Observable<fromProducts.State>;
   productList;
   constructor(public store: Store<fromProducts.FeatureState>) { }
