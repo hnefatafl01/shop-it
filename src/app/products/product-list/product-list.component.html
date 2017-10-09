@@ -2,9 +2,9 @@
   <div class="search-bar">
     <div>
       <label for="category-search">Search by Category:</label>
-      <select id="sort-category">
+      <select id="sort-category" name="cat" [(ngModel)]="selectedCategory">
           <option value="cat" selected>choose category</option>
-          <option value="cat" *ngFor="let cat of categories">{{cat}}</option>
+          <option [value]="cat" *ngFor="let cat of categories">{{cat}}</option>
       </select>
       <label for="search">Search by Name:</label>
       <input id="search" name="search" type="text" [(ngModel)]="search">
@@ -22,7 +22,7 @@
       </select>
     </div>
   </div>
-  <div *ngFor="let item of productList | searchPipe:search | sortPrice:direction">
+  <div *ngFor="let item of productList | searchPipe:search | sortPrice:direction | categoryPipe:selectedCategory">
     <app-item [product]="item"></app-item>
   </div>
 </div>

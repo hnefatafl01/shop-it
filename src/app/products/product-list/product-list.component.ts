@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit, OnChanges {
   direction: string;
   search: string;
   categories: string[];
+  selectedCategory: string;
   productsState: Observable<fromProducts.State>;
   productList;
   constructor(public store: Store<fromProducts.FeatureState>) { }
@@ -24,7 +25,7 @@ export class ProductListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.categories = ['food', 'apparel', 'beverage'];
+    this.categories = ['Food', 'Apparel', 'Beverage'];
     this.productsState = this.store.select('products');
     this.productsState.subscribe(products => this.productList = products.productList);
   }
