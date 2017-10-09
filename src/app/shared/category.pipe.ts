@@ -9,12 +9,13 @@ export class CategoryPipe implements PipeTransform {
     if (selected) {
       selected = selected.toLowerCase();
       return value.filter((val) => {
-      //   return val.categories.filter((el: any) => {
-      //       return el.toLowerCase().indexOf(selected) > -1;
-      //   });
+        let test = val.categories.indexOf(selected);
+        if (test > -1) {
+          return val;
+        } else {
+          return null;
+        }
       });
-    // console.log(value);
-    // console.log(selected);
     }
     return value;
   }
