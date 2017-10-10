@@ -1,3 +1,24 @@
-<p>
-  checkout works!
-</p>
+<div class="container">
+  <div class="checkout-details">
+    <h4>Checkout</h4>
+    <div class="checkout-list" *ngFor="let item of bag">
+
+      <div class="item">
+        <img class="thumbnail" src="{{item.imgUrl}}" alt="item thumbnail">
+        <section class="item-info">
+          <div class="item-info-header">Item: {{item.title}}</div>
+          <div class="item-info-content">Qty: {{item.quantity}}</div>
+          <div class="item-info-content">Price: ${{item.price | currency}}</div>
+          <div class="item-info-content">Subtotal: ${{subtotal | currency}}</div>
+        </section>
+        <div class="item-actions">
+          <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <h4>Total: ${{total | currency}}</h4>
+  </div>
+</div>

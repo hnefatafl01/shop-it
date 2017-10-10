@@ -17,6 +17,7 @@ import { SortPricePipe } from './shared/sort-price.pipe';
 import { SearchPipe } from './shared/search.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CategoryPipe } from './shared/category.pipe';
+import { CurrencyPipe } from './shared/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CategoryPipe } from './shared/category.pipe';
     SearchPipe,
     SortPricePipe,
     CheckoutComponent,
-    CategoryPipe
+    CategoryPipe,
+    CurrencyPipe
   ],
   imports: [
     BrowserModule,
