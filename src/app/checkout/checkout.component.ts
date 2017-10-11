@@ -23,15 +23,11 @@ export class CheckoutComponent implements OnInit {
     this.checkoutState = this.store.select('products');
     this.checkoutState.subscribe((products) => {
       this.bag = products.bagList;
-      this.bag.reduce((sum, item) => {
-        return sum + item.price;
-      }, 0);
       this.bag.forEach((item: Item) => {
         this.subtotal = item.price * item.quantity;
         this.total += this.subtotal;
       });
     });
-
   }
 
 }
